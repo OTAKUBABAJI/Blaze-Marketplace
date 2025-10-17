@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
@@ -14,5 +15,11 @@ export default defineConfig({
     alias: {
       '@wagmi/core/providers/public': '@wagmi/core'
     }
-  }
+  },
+  build: {  // Add this block
+    outDir: 'dist',
+    rollupOptions: {
+      input: path.resolve(__dirname, 'index.html'),  // Explicitly resolves entry
+    },
+  },
 });
