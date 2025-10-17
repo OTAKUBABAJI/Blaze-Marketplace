@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd frontend/frontend-blaze && npm run build",
+  "outputDirectory": "frontend/frontend-blaze/dist"
+}
